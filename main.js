@@ -1,12 +1,12 @@
 const electron = require('electron')
 // Module to control application life.
-const app = electron.app
+const {app, shell} = electron
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-
+const defaultMenu = require('electron-default-menu');
 const path = require('path')
 const url = require('url')
-
+const Menu = require("electron").Menu;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -22,7 +22,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/app/index.html'),
+    pathname: path.join(__dirname, '/app/add.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -37,6 +37,10 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+  // Create the Application's main menu
+  const menu = defaultMenu(app, shell);
+
+  Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 }
 
 // This method will be called when Electron has finished

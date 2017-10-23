@@ -1,0 +1,88 @@
+.head {
+	position: absolute;
+	top: 0;
+    width: 100vw;
+    height: 50px;
+	line-height: 50px;
+    -webkit-app-region: drag;
+	padding-left: 100px;
+	box-shadow: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	color: white;
+}
+.breadcrumb:hover {
+	color: white;
+}
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+.collection {
+	width: 75vw;
+	cursor: pointer;
+}
+.collection > a.li {
+	color: black;
+}
+.add {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.show {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 75%);
+}
+.input-field > label {
+    color: white !important;
+}
+
+
+/* label focus color */
+
+.input-field > input[type=text]:focus+label {
+    color: white !important;
+}
+
+
+/* label underline focus color */
+
+.input-field > *:focus {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important;
+}
+
+
+/* valid color */
+
+.input-field > input[type=text].valid {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important;
+}
+
+
+/* invalid color */
+
+.input-field > input[type=text].invalid {
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+}
+
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: white !important;
+}

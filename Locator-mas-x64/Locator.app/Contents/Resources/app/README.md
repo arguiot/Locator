@@ -1,0 +1,2 @@
+# Locator
+Beautiful URL Manager

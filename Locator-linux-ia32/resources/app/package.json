@@ -1,0 +1,27 @@
+{
+  "name": "locator",
+  "version": "0.0.1",
+  "description": "A Beautiful URL Manager",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^1.7.9",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.2.1",
+    "localstoragedb": "^2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arguiot/Locator.git"
+  },
+  "author": "Arthur Guiot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arguiot/Locator/issues"
+  },
+  "homepage": "https://github.com/arguiot/Locator#readme"
+}

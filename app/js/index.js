@@ -1,4 +1,9 @@
 const $ = new DisplayJS(window);
+const db = require("localstoragedb")("Locator", localStorage);
+if( db.isNew() ) {
+	db.createTable("url", ["url", "notes"])
+	db.commit()
+}
 var first = true;
 var note = false;
 var done = false
@@ -13,11 +18,28 @@ $.target(() => {
 $.var();
 $.on(".done", "click", e => {
 	e.preventDefault();
-	alert(`URL = ${newLink}\nNotes = ${newNote}`)
+	const data = {
+		url: newLink,
+		notes: newNote
+	}
+	db.insert("url", data);
+	db.commit();
 	first = true;
 	note = false;
 	done = false
 	$.valEmpty(".link")
 	$.valEmpty(".notes")
 	$.var();
+})
+$.on(".show", "click", e => {
+	e.preventDefault();
+	$.html(".add", "Loading...")
+	const path = require('path')
+	const url = require('url')
+	const { remote } = require('electron')
+	remote.getCurrentWindow().loadURL(url.format({
+      pathname: path.join(__dirname, '/list.html'),
+      protocol: 'file:',
+      slashes: true
+    }))
 })
