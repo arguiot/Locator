@@ -1,0 +1,69 @@
+.head {
+    width: 100vw;
+    height: 50px;
+    -webkit-app-region: drag;
+}
+
+body {
+	min-height: 85vh;
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.add {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field > label {
+    color: white !important;
+}
+
+
+/* label focus color */
+
+.input-field > input[type=text]:focus+label {
+    color: white !important;
+}
+
+
+/* label underline focus color */
+
+.input-field > *:focus {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important;
+}
+
+
+/* valid color */
+
+.input-field > input[type=text].valid {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important;
+}
+
+
+/* invalid color */
+
+.input-field > input[type=text].invalid {
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+}
+
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: white !important;
+}
